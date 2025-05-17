@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>ESX INVENTORYHUD ISPECIAL x DEVC</title>
+	<link rel="stylesheet" type="text/css" href="css/ui.css" />
+	<link rel="stylesheet" type="text/css" href="css/jquery.menu.css" />
+	<script src="https://kit.fontawesome.com/723d9b901d.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+	<link href="https://kit-pro.fontawesome.com/releases/v6.2.0/css/pro.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+
+<body oncontextmenu="return false;" class="yd-default">
+	<div class="popup2" id="popup-count">
+				<div class="header-pop">TRUNK</div>
+		<div class="divider-popup"></div>
+		<div class="popup-body">
+			<div class="">
+				<div class="custom-flex d-flex mx-sm-3 mb-1">
+					<button type="button" class="yd-btn inputMin" id="confirm_count_min">
+						MIN
+					</button>
+					<div id="count_input">
+						<input type="number" class="yd-form yd-count" style="text-align: center; width: 4.688vw !important; margin-bottom: 0.417vw;" min="1" id="item-count" placeholder="จำนวน">
+					</div>
+					<button type="button" class="yd-btn inputMax" id="confirm_count_max">
+						MAX
+					</button>
+				</div>
+			</div>
+			<div class="d-flex justify-content-end">
+				<button type="button" class="yd-btn yd-lg" id="confirm_count">
+					CONFIRM
+				</button>
+			</div>
+		</div>
+		<div class="divider-popup"></div>
+	</div>
+
+	<div class="popup" id="popup-id">
+		<div class="header-pop">GIVE</div>
+		<div class="divider-popup"></div>
+		<div class="popup-body">
+			<div>
+				<div class="custom-flex d-flex">
+					<button type="button" class="yd-btn inputMin" id="confirm_count_min2">
+						MIN
+					</button>
+					<div id="count_input">
+						<input type="number" class="yd-form yd-count ydPlayerCount" style="text-align: center; width: 4.688vw !important; margin-bottom: 0.417vw;" min="1" id="item-count" placeholder="จำนวน">
+					</div>
+					<button type="button" class="yd-btn inputMax" id="confirm_count_max2">
+						MAX
+					</button>
+				</div>
+				
+				<div class="form-group mx-sm-3 mb-1 liner">
+					<input type="number" class="yd-form w100" id="give_id_player" style="color: #ffffff;"  min="1" placeholder="ไอดีผู้เล่น">
+				</div> 
+			</div>
+				<button type="button" class="yd-btn yd-lg" id="confirm_id">CONFIRM</button>
+				<div class="divide-popup"></div>
+		</div>
+		<div class="divider-popup"></div>
+	</div>
+
+	<!-- <div class="hotbar">
+		<div id="fastHotbar"></div>
+	</div> -->
+
+	<div class="hotbar">
+		<div class="hotswapfastslot">
+			<div class="swapslot-one" id="swapslot-one-hotbar"><p>1</p></div>
+			<div class="swapslot-two" id="swapslot-two-hotbar"><p>2</p></div>
+		</div>
+		<div id="hotbarSlots"></div>
+	</div>
+	
+	<div class="ui">
+		<div class="inventory">
+			<div class="inventoryInner">
+				<div class="fastItems">
+					<div id="fastslot">
+						<div class="slot">
+							<div id="itemFast-1" class="item">
+								<div class="item-keybind">1</div>
+								<div class="item-count">
+									<span class="item-count-box">1</span>
+									<span class="item-count-box2">15</span>
+								</div>
+							</div>
+							<div class="item-name-bg"></div>
+						</div>
+						<div class="item-name"></div>
+					</div>
+					<div class="swapfastslot">
+						<div class="swapslot-one" id="swapslot-one-inventory"><p>1</p></div>
+						<div class="swapslot-two" id="swapslot-two-inventory"><p>2</p></div>
+					</div>
+				</div>
+			</div>
+			<div class="header">
+				<div class="title-inventory">INVENTORY</div>
+				<div class="category">
+					<span class="category-item active"><ion-icon name="folder-open-outline"></ion-icon>All</span>
+					<span class="category-item"><ion-icon name="shirt-outline"></ion-icon>Cloth</span>
+				</div>
+			</div>
+			<div class="content-wrap">
+				<div id="playerInventory">
+					<div class="inventory-scroll">
+						<div class="inventory-grid" id="main-inventory">
+							<div class="tab-contents">
+								<div class="tab-pane current" id="all"></div>
+							</div>
+							<!-- <img src="./img/logo.png" style="
+								position: absolute;
+								width: 40vh;
+								height: 40vh;
+								left: 50%;
+								top: 50%;
+								transform: translate(-50%, -50%);
+								opacity: 0.5;
+								z-index: -10;
+							" /> -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="margin: 0.26vw; padding-bottom: 0.26vw"></div>
+			<div id="weightPlayer" class="player-weight">
+				<div class="player-info">
+					<!-- <div class="footer">
+						<label class="switch">
+							<input type="checkbox" id="action-changer" checked>
+							<span class="slider round"></span>
+						</label>
+						&nbsp;
+						เปิด/ปิด การรับของต่างๆ
+					</div> -->
+					
+				</div>
+				<div class="showWeight playerWeight">
+					<span id="weight-text-player"></span>
+					<div class="yd-weight-bar">
+						<div class="yd-weight-progress" id="player-yd"></div>
+					</div>
+				</div>
+			</div>		
+		</div>
+
+		<div class="secondInventory">
+			<div class="secondInventoryInner">
+			</div>
+			<div class="header">
+				<div class="title-inventory-trunk">TRUNK INVENTORY</div>
+				<span id="weight-text-second"></span>
+				<div class="yd-weight-bar">
+					<div class="yd-weight-progress" id="second-yd"></div>
+				</div>
+			</div>
+			<div id="second-inventory" class="inventory-scroll">
+				<div class="slot"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="skin-menu">
+		<div class="skin-menuInner" id="skin-menuInner">
+			<div class="list-skin">
+				<div class="itemskin">
+					<div class="image">
+						<img src="./img/items/weapon_bottle.png" alt="">
+					</div>
+					<div class="name-skin">POOLCUE SKIN 1</div>
+				</div>
+				<div class="itemskin active">
+					<div class="image">
+						<img src="./img/items/weapon_bottle.png" alt="">
+					</div>
+					<div class="name-skin">POOLCUE SKIN 2</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+	<div id="dialog">
+		<div id="nearPlayers"></div>
+	</div>
+
+	<script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+
+	<script src="js/config.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+	<script src="js/inventory.js"></script>
+	<script src="js/yield.popup.js"></script>
+	<script src="js/setup-config.js"></script>
+	<script src="js/skin-weapon.js"></script>
+
+	<script src="js/jquery.vendor.js"></script>
+	<script>
+		$(function () {
+			$("#dialog").dialog({
+				autoOpen: false,
+				clickOutside: true,
+			});
+			$("#close").click(() => {
+				$.post("http://esx_inventoryhud/NUIFocusOff", JSON.stringify({}));
+			});
+		});
+	</script>
+
+
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
